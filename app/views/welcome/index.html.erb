@@ -1,0 +1,21 @@
+<h1>PEOPLE</h1>
+<h6>(who need people)</h6>
+
+<h3>Enter a people who needs people...</h3>
+<%= form_for @person, remote: true do |f| %>
+
+<%= f.label "Name:" %>
+<%= f.text_field :name %>
+
+<%= f.label "State:" %>
+<%= f.collection_select :state_id, @states, "id", "name", {prompt: "pick a state, you noob"} %>
+<%= f.submit %>
+<% end %>
+
+<ul id="peop-list">
+<% @people.each do |person| %>
+	<li>
+		<%= person.name %> (from <%= person.state.abbreviation %>) is the luckiest person
+	</li>
+<% end %>
+</ul>
