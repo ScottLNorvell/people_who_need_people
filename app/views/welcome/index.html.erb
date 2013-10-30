@@ -8,7 +8,7 @@
 <%= f.text_field :name %>
 
 <%= f.label "State:" %>
-<%= f.collection_select :state_id, @states, "id", "name", {prompt: "pick a state, you noob"} %>
+<%= f.collection_select :state_id, @states, "id", "name", {prompt: "pick a state"} %>
 <%= f.submit %>
 <% end %>
 
